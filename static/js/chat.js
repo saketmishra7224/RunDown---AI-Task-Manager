@@ -1,3 +1,21 @@
+/**
+ * RunDown AI Chatbot - Client-side Implementation
+ * Version: 1.0.0
+ * 
+ * Features:
+ * - Real-time AI-powered chat interface
+ * - Calendar and task management via natural language
+ * - Smart suggestions and context-aware responses
+ * - Seamless integration with Google Calendar and Gmail
+ */
+
+// Chat configuration
+const CHAT_CONFIG = {
+  maxMessageLength: 2000,
+  typingIndicatorDelay: 500,
+  autoScrollEnabled: true
+};
+
 // Add this at the beginning of the file to check session before proceeding
 async function checkSession() {
   try {
