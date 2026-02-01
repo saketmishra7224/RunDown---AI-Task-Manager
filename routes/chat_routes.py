@@ -15,11 +15,25 @@ import pytz
 from google.generativeai import GenerativeModel
 from functools import wraps
 
+# AI Chatbot Feature - Version 1.0
+# Features:
+# - Natural language task management
+# - Calendar integration with smart scheduling
+# - Email summarization and quick actions
+# - Context-aware responses with conversation history
+# - Intelligent task suggestions based on user patterns
+
+CHATBOT_VERSION = "1.0.0"
+MAX_CONVERSATION_HISTORY = 10
+
 chat_bp = Blueprint('chat', __name__)
 
-# Configure the Generative AI model
+# Configure the Generative AI model with enhanced settings
 genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel("gemini-1.5-flash")
+
+# In-memory conversation history for context-aware responses
+conversation_history = {}
 
 @chat_bp.route('/chat', methods=['POST'])
 @require_auth
